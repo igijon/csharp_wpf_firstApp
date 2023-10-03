@@ -24,5 +24,11 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void btnMyButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Sender es el objeto que llama a este controlador
+            MessageBox.Show("Hello, Windows Presentation Foundation!");
+        }
     }
 }
