@@ -23,5 +23,35 @@
         <Canvas Height="100" Width="1280">
             <Ellipse Fill="Yellow" Height="100" Width="200" StrokeThickness="2" Stroke="Black"/>
         </Canvas>
+        <Canvas Height="150" Width="1280">
+            <Path Stroke="Black" StrokeThickness="1">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure StartPoint="10,100">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <QuadraticBezierSegment Point1="200,200" Point2="300,100" />
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Path Stroke="DarkGoldenRod" StrokeThickness="3" Data="M 100,200 C 100,25 400,350 400,175 H 280" />
+        </Canvas>
+        <Canvas Background="LightGray" Height="150" Width="1280">
+            <Ellipse Canvas.Top="50" Canvas.Left="50" Fill="#FFFFFF00" Height="75" Width="75" StrokeThickness="5" Stroke="#FF0000FF"/>
+        </Canvas>
+        <Canvas Height="150" Width="1280">
+            <Polyline Points="25,25 0,50 25,75 50,50 25,25 25,0"  Stroke="Blue" StrokeThickness="10" Canvas.Left="75" Canvas.Top="50">
+                <Polyline.RenderTransform>
+                    <RotateTransform CenterX="0" CenterY="0" Angle="45" />
+                </Polyline.RenderTransform>
+            </Polyline>
+        </Canvas>
     </StackPanel>
 </Window>
