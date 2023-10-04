@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Hello WPF!" Height="450" Width="800">
-    <Grid>
-        <Button Name="btnMyButton" Content="Click Me!" Height="100" Click="btnMyButton_Click"></Button>
-    </Grid>
+    <DockPanel>
+        <TextBox DockPanel.Dock="Top">Dock = "Top"</TextBox>
+        <TextBox DockPanel.Dock="Bottom">Dock = "Bottom"</TextBox>
+        <TextBox DockPanel.Dock="Left">Dock = "Left"</TextBox>
+        <TextBox Background="White">This TextBox "fills" the remaining space.</TextBox>
+    </DockPanel>
 </Window>
