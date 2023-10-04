@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Hello WPF!" Height="450" Width="800">
-    <Grid>
-        <TextBox Name="txtPersonName" Text="{Binding Path=Name}"></TextBox>
-    </Grid>
+    <StackPanel>
+        <Canvas Height="100" Width="1280">
+            <Line X1="10" Y1="10" X2="50" Y2="50" Stroke="Black" StrokeThickness="4"></Line>
+        </Canvas>
+    </StackPanel>
 </Window>
