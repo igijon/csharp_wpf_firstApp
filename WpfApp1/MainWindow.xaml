@@ -6,52 +6,21 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Hello WPF!" Height="450" Width="800">
-    <StackPanel>
-        <Canvas Height="100" Width="1280">
-            <Line X1="10" Y1="10" X2="50" Y2="50" Stroke="Black" StrokeThickness="4"></Line>
-            <Line X1="10" Y1="10" X2="50" Y2="50" StrokeThickness="4" Canvas.Left="100">
-                <Line.Stroke>
-                    <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-                        <GradientStop Color="Red" Offset="0"/>
-                        <GradientStop Color="Blue" Offset="0.25"/>
-                    </RadialGradientBrush>
-                </Line.Stroke>
-            </Line>
-            <Line X1="10" Y1="60" X2="150" Y2="60" Stroke="Black" StrokeThickness="4"/>
-            
-        </Canvas>
-        <Canvas Height="100" Width="1280">
-            <Ellipse Fill="Yellow" Height="100" Width="200" StrokeThickness="2" Stroke="Black"/>
-        </Canvas>
-        <Canvas Height="150" Width="1280">
-            <Path Stroke="Black" StrokeThickness="1">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathGeometry.Figures>
-                            <PathFigureCollection>
-                                <PathFigure StartPoint="10,100">
-                                    <PathFigure.Segments>
-                                        <PathSegmentCollection>
-                                            <QuadraticBezierSegment Point1="200,200" Point2="300,100" />
-                                        </PathSegmentCollection>
-                                    </PathFigure.Segments>
-                                </PathFigure>
-                            </PathFigureCollection>
-                        </PathGeometry.Figures>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
-            <Path Stroke="DarkGoldenRod" StrokeThickness="3" Data="M 100,200 C 100,25 400,350 400,175 H 280" />
-        </Canvas>
-        <Canvas Background="LightGray" Height="150" Width="1280">
-            <Ellipse Canvas.Top="50" Canvas.Left="50" Fill="#FFFFFF00" Height="75" Width="75" StrokeThickness="5" Stroke="#FF0000FF"/>
-        </Canvas>
-        <Canvas Height="150" Width="1280">
-            <Polyline Points="25,25 0,50 25,75 50,50 25,25 25,0"  Stroke="Blue" StrokeThickness="10" Canvas.Left="75" Canvas.Top="50">
-                <Polyline.RenderTransform>
-                    <RotateTransform CenterX="0" CenterY="0" Angle="45" />
-                </Polyline.RenderTransform>
-            </Polyline>
-        </Canvas>
-    </StackPanel>
+    <Grid>
+        <StackPanel Margin="10">
+            <Rectangle Name="MyRectangle" Width="100"  Height="100" Fill="Blue">
+                <Rectangle.Triggers>
+                    <!-- Animates the rectangle's opacity. -->
+                    <EventTrigger RoutedEvent="Rectangle.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="MyRectangle"  Storyboard.TargetProperty="Opacity" From="1.0" To="0.0" Duration="0:0:5"  AutoReverse="True" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+        </StackPanel>
+
+    </Grid>
 </Window>
