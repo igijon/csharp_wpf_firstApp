@@ -23,12 +23,25 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loader;
         }
 
-        private void btnMyButton_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_Loader(object sender, RoutedEventArgs e)
         {
-            //Sender es el objeto que llama a este controlador
-            MessageBox.Show("Hello, Windows Presentation Foundation!");
+            Person person = new Person()
+            {
+                Name = "Sergio",
+                Age = 43
+            };
+            this.DataContext = person; //Asignarlo en DataContext de Window (this se refiere a Window)
         }
     }
+}
+
+public class Person
+{
+    public String Name { get; set; }
+    public int Age { get; set; }
+
+
 }
